@@ -6,13 +6,18 @@
   * https://okdevtv.com/mib/slack
 
 ## 빌드
-```
-git clone https://github.com/kenu/slack-bot
-cd slack-bot
+```sh
+git clone https://github.com/innovationacademy-kr/42slack-bot
+cd 42slack-bot
 npm i
 cp .env.sample .env
 # set up .env values
+open http://localhost:4002
 npm start
+```
+
+```sh
+curl -X POST localhost:4002/marvin -H 'Content-Type: application/json' -d '{"text": "lotto"}'
 ```
 
 ## ref

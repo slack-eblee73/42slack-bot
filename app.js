@@ -18,7 +18,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/slack'));
-app.use('/slack', require('./routes/slack'));
 app.use('/users', require('./routes/users'));
 
 // catch 404 and forward to error handler

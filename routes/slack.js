@@ -7,16 +7,16 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/return', async function (req, res, next) {
-  console.log(req.query, req.body);
+  console.log(req.body, req.query);
   send(res, 'ok');
 });
 
-router.post('/okdevot', async (req, res, next) => {
+router.post('/marvin', async function (req, res, next) {
   const key = (req.body) ? req.body.text : '';
   const actionKey = actions.translate(key);
   const action = actions[actionKey];
   let result = (typeof action === 'function') ? await action() : '🤖Hmm... but don’t panic!';
-  send(res, result);
+  send(res, getData(result));
 });
 
 function getData(body) {
